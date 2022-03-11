@@ -1,0 +1,38 @@
+<%= form_with model: @user, local: true do |f| %>
+
+<%= render 'shared/error_messages', model: f.object %>
+
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image, autofocus: true, autocomplete: "image" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goal %><br />
+    <%= f.text_field :goal, autofocus: true, autocomplete: "goal" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :second_goal %><br />
+    <%= f.text_field :second_goal, autofocus: true, autocomplete: "second_goal" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :to_do %><br />
+    <%= f.text_field :to_do, autofocus: true, autocomplete: "to_do" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "編集する" %>
+  </div>
+<% end %>

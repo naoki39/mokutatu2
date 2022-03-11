@@ -1,0 +1,22 @@
+<div class = "header" >
+  <%= "#{@user.nickname}さんのマイページ"  %>
+  <%= link_to "ホームに戻る", root_path %>
+</div>
+
+
+<div class="wrapper">
+  <div class= "side_bar">
+    <%= image_tag(@user.image.variant(resize: '500x500'),class: "mypage_user_icon")%>
+    <%= @user.nickname %>
+    <%= @user.goal %>
+    <%= @user.second_goal %>
+    <%= @user.to_do %>
+  <% if current_user.id == @user.id %>
+    <%= link_to "編集する", edit_user_path(@user.id) %>
+  <% end %>
+</div>
+
+  <div class ="main_posts">
+    <%= render partial: "posts/main", collection: @posts, as: "post" %>
+  </div>
+</div>
