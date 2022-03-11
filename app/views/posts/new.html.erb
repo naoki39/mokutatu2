@@ -1,0 +1,7 @@
+<%= form_with(model: [@community,@post], local: true) do |form| %>
+      <h3>投稿する</h3>
+      <%= form.text_area :text, placeholder: "今日取り組んだこと" %>
+      <%= form.submit "SEND" %>
+<% end %>
+
+
