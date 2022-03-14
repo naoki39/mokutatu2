@@ -14,7 +14,7 @@
   <div class="comments">
     <h4>コメント一覧</h4>
     <% @comments.each do |comment| %>
-      <%= link_to image_tag(comment.user.image.variant(resize: '500x500'),class: "mypage_user_icon"), user_path(comment.post.user.id) %>
+      <%= link_to image_tag(comment.user.image.variant(resize: '500x500'),class: "mypage_user_icon"), user_path(comment.user.id) %>
       <%= comment.user.nickname %>
       <%= comment.text %>
       <% if current_user.id == comment.user.id %>
