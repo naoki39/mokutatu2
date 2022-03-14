@@ -21,6 +21,21 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])#ユーザーがどの投稿を選択しているかが格納
+    @comment = Comment.new#コメントを保存するための空のインスタンスを生成
+    @comments = @post.comments.includes(:user)#投稿に対して紐づいている全てのコメントと、コメントをしたユーザー情報が格納
+  end
+
+  def destroy
+    set_post
+    @post = Post.find(params[:id])
+    if current_user.id == @post.user.id
+      @post.destroy 
+      redirect_to 
+    end
+  end
+
   private
 
   def set_post

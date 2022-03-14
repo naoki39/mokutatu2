@@ -1,5 +1,5 @@
 <%= link_to image_tag(post.user.image.variant(resize: '500x500'), class: "posts_user_icon"), user_path(post.user.id) %>
- <%= link_to community_post_path(post.community.id,post.id) do %>
+ <%= link_to post_path(post.id) do %>
      <%= post.user.nickname %>
       <%= post.text %>
      <%= l post.created_at %>
