@@ -17,4 +17,5 @@ class User < ApplicationRecord
   has_one_attached :image
   belongs_to :community, optional: true
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end
