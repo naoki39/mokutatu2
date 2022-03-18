@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-  def index
+  def index#データベースからコミュニティを取得
     @community1 = Community.where(name: "ダイエット")
     @community2 = Community.where(name: "トレーニング")
     @community3 = Community.where(name: "資格勉強")
