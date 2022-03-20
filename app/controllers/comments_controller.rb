@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   private
 
   def set_comment
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])#選択されたpostを取得する
   end
 
   def comment_params
