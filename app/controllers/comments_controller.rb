@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_comment, only: [:create, :destroy]
 
-  def create
+  def create#コメントの作成
     set_comment
     @comment = Comment.create(comment_params)
     redirect_to "/posts/#{@post.id}"
