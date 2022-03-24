@@ -1,14 +1,19 @@
+<div class= "header">
 <h1>どのコミュニティに参加しますか？</h1>
-
-<%= link_to "ダイエット", community_posts_path(@community1.ids) %>
-<%= link_to "トレーニング",  community_posts_path(@community2.ids) %>
-<%= link_to "資格勉強",  community_posts_path(@community3.ids) %>
-<%= link_to "創作",  community_posts_path(@community4.ids) %>
-
 <% if user_signed_in? %>
-  <%= link_to current_user.nickname, "#" %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <%= link_to current_user.nickname, "#" ,class: "user" %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logs" %>
 <% else %>
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to "新規登録", new_user_registration_path %>
+  <%= link_to "ログイン", new_user_session_path,class: "user" %>
+  <%= link_to "新規登録", new_user_registration_path,class: "logs" %>
 <% end %>
+</div>
+
+<div class= "communities">
+  <%= link_to "ダイエット", community_posts_path(@community1.ids), class: "community" %>
+  <%= link_to "トレーニング",  community_posts_path(@community2.ids), class: "community" %>
+  <%= link_to "資格勉強",  community_posts_path(@community3.ids), class: "community" %>
+  <%= link_to "創作",  community_posts_path(@community4.ids), class: "community" %>
+</div>
+
+
