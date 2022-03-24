@@ -1,12 +1,28 @@
+
 .header {
   background-color: aqua;
   display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 .user {
-  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.logs {
+  text-decoration: none;
+  font-size: 20px;
 }
 
 .communities {
-  
+  display: flex;
+  justify-content: space-around;
+}
+
+.community {
+  text-decoration: none;
+  background-color: brown;
+  font-size: 50px;
 }
