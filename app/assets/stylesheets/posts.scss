@@ -4,6 +4,8 @@
 
 .text {
   text-decoration: none;
+  margin-right: 20px;
+  background-color: saddlebrown;
 }
 
 .side_bar {
@@ -11,13 +13,19 @@
   width: 300px;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
+  align-items: center;
 }
 
 .mypage_user_icon {
   width: 100px;
   height: 100px;
   border-radius: 100px;
+}
+
+.content {
+  display: inline;
+  background-color: red;
 }
 
 .main_posts {
@@ -31,4 +39,22 @@
   width: 50px;
   height: 50px;
   border-radius: 100px;
+  background-color: seagreen;
+  
+}
+
+.post_contents {
+  background-color: salmon;
+  display: flex;
+  flex-flow: column;
+}
+
+.post_content {
+  text-decoration: none;
+}
+
+.post_content_name {
+  text-decoration: none;
+  font-size: 25px;
+  font-style:italic;
 }
