@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     redirect_to "/posts/#{@post.id}"
   end
 
-  def destroy
+  def destroy#コメントの削除
     set_comment
     @comment = Comment.find(params[:id])
     if current_user.id == @comment.user.id
