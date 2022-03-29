@@ -69,7 +69,7 @@ https://mokutatu2.herokuapp.com/
 * 一定数ポイントが貯まると、レベルアップする機能
 
 # データベース設計
-<img width="693" alt="スクリーンショット 2022-03-29 17 27 03" src="https://user-images.githubusercontent.com/97263370/160568085-df1cadfc-6d2d-4d8d-863a-4fce897da892.png">
+<img width="691" alt="スクリーンショット 2022-03-29 17 38 12" src="https://user-images.githubusercontent.com/97263370/160570250-c99ad664-4d86-4b82-9a49-fa8d916b9792.png">
 
 
 
