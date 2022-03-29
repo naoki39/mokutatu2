@@ -1,7 +1,13 @@
+<div class = "header" >
+  <%= render partial: "header", locals: {community: @community} %>
+</div>
+
+<div class = "wrapper">
 <%= form_with(model: [@community,@post], local: true) do |form| %>
-      <h3>投稿する</h3>
+      <h3>今日の取り組みを投稿しよう！</h3>
       <%= form.text_area :text, placeholder: "今日取り組んだこと" %>
-      <%= form.submit "SEND" %>
+      <%= form.submit "投稿" %>
 <% end %>
+</div>
 
 

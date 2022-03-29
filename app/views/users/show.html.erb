@@ -1,18 +1,24 @@
 <div class = "header" >
-  <%= "#{@user.nickname}さんのマイページ"  %>
-  <%= link_to "ホームに戻る", root_path %>
+  <h1>【モクタツ】<%= @user.nickname %>さんのマイページ</h1>
+  <%= link_to "コミュニティ選択画面に戻る", root_path,class: "text" %>
 </div>
 
 
 <div class="wrapper">
   <div class= "side_bar">
     <%= image_tag(@user.image.variant(resize: '500x500'),class: "mypage_user_icon")%>
-    <%= @user.nickname %>
-    <%= @user.goal %>
-    <%= @user.second_goal %>
-    <%= @user.to_do %>
+  <div class= "contents">
+    <p>【ニックネーム】</p>
+    <p class="content"><%= @user.nickname %></p>
+    <p>【達成したい目標】</p>
+    <p class="content"><%= @user.goal %></p>
+    <p>【中間目標】</p>
+    <p class="content"><%= @user.second_goal %></p>
+    <p>【達成するためにやること】</p>
+    <p class="content"><%= @user.to_do %></p>
+  </div>
   <% if current_user.id == @user.id %>
-    <%= link_to "編集する", edit_user_path(@user.id) %>
+    <%= link_to "プロフィールを編集する", edit_user_path(@user.id), class: "text" %>
   <% end %>
 </div>
 

@@ -3,9 +3,7 @@
 }
 
 .text {
-  text-decoration: none;
-  margin-right: 20px;
-  background-color: saddlebrown;
+  color:orange;
 }
 
 .side_bar {
@@ -23,9 +21,13 @@
   border-radius: 100px;
 }
 
-.content {
+.contents {
   display: inline;
-  background-color: red;
+  
+}
+
+.content {
+  color: crimson;
 }
 
 .main_posts {
@@ -44,7 +46,7 @@
 }
 
 .post_contents {
-  background-color: salmon;
+  background-color:beige;
   display: flex;
   flex-flow: column;
 }
@@ -58,3 +60,4 @@
   font-size: 25px;
   font-style:italic;
 }
+

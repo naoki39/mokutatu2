@@ -1,18 +1,21 @@
 <div class = "header" >
-  <%= @community.name  %>
-  <%= link_to "新規投稿", new_community_post_path,class: "text" %>
-  <%= link_to "ホームに戻る", root_path,class: "text" %>
+  <%= render partial: "header", locals: {community: @community} %>
 </div>
 
 <div class="wrapper">
   <div class= "side_bar">
     <%= link_to image_tag(current_user.image.variant(resize: '500x500'),class: "mypage_user_icon"), user_path(current_user.id) %>
-  <div class= "content">
-        <%= current_user.nickname %>
-        <%= current_user.goal %>
-        <%= current_user.second_goal %>
-        <%= current_user.to_do %>
+  <div class= "contents">
+        <p>【ニックネーム】</p>
+        <p class="content"><%= current_user.nickname %></p>
+        <p>【達成したい目標】</p>
+        <p class="content"><%= current_user.goal %></p>
+        <p>【中間目標】</p>
+        <p class="content"><%= current_user.second_goal %></p>
+        <p>【達成するためにやること】</p>
+        <p class="content"><%= current_user.to_do %></p>
   </div>
+   <%= link_to "今日の取り組みを投稿する", new_community_post_path, class: "text" %>
   </div>
 
   <div class ="main_posts", id="vote-box">

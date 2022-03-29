@@ -1,26 +1,29 @@
+
+
 <div class = "mypost">
-  <%= link_to image_tag(@post.user.image.variant(resize: '500x500'),class: "mypage_user_icon"), user_path(@post.user.id) %>
+  <%= link_to user_path(@post.user.id) do %>
+  <%= image_tag(@post.user.image.variant(resize: '500x500'),class: "mypage_user_icon") %>
   <%= @post.user.nickname %>
-  <%= @post.text%>
- <% if user_signed_in? && current_user.id == @post.user.id %>
-  <%= link_to "投稿の削除", post_path(@post.id), method: :delete %>
- <% end %>
+  <% end %>
+  <h2>【取り組んだこと】</h2>
+  <p><%= @post.text%></p>
+  <p><%= l @post.created_at %></p>
  <%= form_with(model: [@post,@comment], local: true) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
-    <%= f.text_area :text, placeholder: "コメントする" %>
-    <%= f.submit "送信する" %>
+    <%= f.text_area :text, placeholder: "ねぎらいのコメントをしよう！"%>
+    <%= f.submit "コメントする" %>
   <% end %>
 
+ 
   <div class="comments">
-    <h4>コメント一覧</h4>
+    <h2>＜この投稿に対するコメント一覧＞</h4>
     <% @comments.each do |comment| %>
       <%= link_to image_tag(comment.user.image.variant(resize: '500x500'),class: "mypage_user_icon"), user_path(comment.user.id) %>
-      <%= comment.user.nickname %>
-      <%= comment.text %>
+      <%= link_to comment.user.nickname, user_path(comment.user.id) %>
+      <p><%= comment.text %></p>
       <% if current_user.id == comment.user.id %>
-        <%= link_to "削除する",  post_comment_path(comment.post.id, comment.id), method: :delete %>
+        <p><%= link_to "削除する",  post_comment_path(comment.post.id, comment.id), method: :delete %></p>
       <% end %>
     <% end %>
-
 
 </div>
