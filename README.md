@@ -69,7 +69,8 @@ https://mokutatu2.herokuapp.com/
 * 一定数ポイントが貯まると、レベルアップする機能
 
 # データベース設計
-<img width="692" alt="スクリーンショット 2022-03-29 14 18 41" src="https://user-images.githubusercontent.com/97263370/160538949-6fce222d-b121-4dad-b603-f12fe80d3566.png">
+<img width="693" alt="スクリーンショット 2022-03-29 17 27 03" src="https://user-images.githubusercontent.com/97263370/160568085-df1cadfc-6d2d-4d8d-863a-4fce897da892.png">
+
 
 
 # テーブル設計
@@ -104,7 +105,7 @@ https://mokutatu2.herokuapp.com/
 - has_many :comments, dependent: :destroy
 
 
-## communitiessテーブル
+## communitiesテーブル
 | Column         | Type       | Option                         |
 | -------------- | ---------- | ------------------------------ |
 | name           | string     | null: false                    |  
