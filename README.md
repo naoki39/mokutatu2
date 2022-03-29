@@ -98,6 +98,7 @@ https://mokutatu2.herokuapp.com/
 | ----------------    | ---------- |------------------------------- |
 | text                | string     | null: false                    |  
 | user                | references | null: false, foreign_key: true |
+| community           | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
