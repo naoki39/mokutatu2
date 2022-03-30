@@ -1,8 +1,17 @@
-<%= link_to image_tag(post.user.image.variant(resize: '500x500'), class: "posts_user_icon"), user_path(post.user.id) %>
+
 <div class="post_contents">
- <%= link_to post_path(post.id) do %>
-     <p class="post_content_name"><%= post.user.nickname %></p>
-     <p class="post_content"><%= l post.created_at %></p>
-     <p class="post_content"><%= "【今日やったこと】#{post.text}" %></p>
+<%= link_to user_path(post.user.id) do %>
+  <%= image_tag(post.user.image.variant(resize: '500x500'), class: "posts_user_icon") %>
+  <%= post.user.nickname %>
+<% end %>
+
+<div class= "post">
+    <h2>【取り組んだこと】</h2>
+    <p class="post_content"><%= post.text %></p>
+    <p class="post_content"><%= l post.created_at %></p>
+ <% if user_signed_in? && current_user.id == post.user.id %>
+  <%= link_to "投稿を削除する", community_post_path(post.community.id, post.id), method: :delete %>
  <% end %>
+ <%= link_to "コメント", post_path(post.id) %>
+ </div>
 </div>

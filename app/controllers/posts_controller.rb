@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if current_user.id == @post.user.id
       @post.destroy 
-      redirect_to 
+      redirect_to community_posts_path(@community.id)
     end
   end
 
