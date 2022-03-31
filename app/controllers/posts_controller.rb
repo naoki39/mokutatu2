@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    set_post
+    set_post#community_idを取得
     @post = Post.find(params[:id])
     if current_user.id == @post.user.id
       @post.destroy 
