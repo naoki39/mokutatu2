@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def destroy
     set_post#community_idを取得
     @post = Post.find(params[:id])#投稿を取得
-    if current_user.id == @post.user.id
+    if current_user.id == @post.user.id#現在ログイン中ユーザーと投稿主が一致していた場合
       @post.destroy 
       redirect_to community_posts_path(@community.id)
     end
