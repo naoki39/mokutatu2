@@ -1,8 +1,12 @@
 <div class= "header">
 <h1>【モクタツ】</h1>
 <% if user_signed_in? %>
-  <%= link_to current_user.nickname, user_path(current_user.id) ,class: "user" %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logs" %>
+  <button type="button" class="btn btn-outline-primary">
+  <%= link_to current_user.nickname, user_path(current_user.id) %>
+  </button>
+  <button type="button" class="btn btn-outline-primary">
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </button>
 <% else %>
   <%= link_to "ログイン", new_user_session_path,class: "user" %>
   <%= link_to "新規登録", new_user_registration_path,class: "logs" %>
@@ -11,14 +15,18 @@
 
 <h1>参加したいコミュニティをクリックしてね！</h1>
 <div class= "communities">
-  <p><%= link_to "①「ダイエット」", community_posts_path(@community1.ids), class: "community" %>
-  ダイエットで、スリムな体型を目指す人が集まるコミュニティ</p>
-  <p><%= link_to "②「トレーニング」",  community_posts_path(@community2.ids), class: "community" %>
-  トレーニングをして、理想の体つきを目指す人が集まるコミュニティ</p>
-  <p><%= link_to "③「資格勉強」",  community_posts_path(@community3.ids), class: "community" %>
-  合格したい資格があって、日々勉強している人が集まるコミュニティ</p>
-  <p><%= link_to "④「創作」",  community_posts_path(@community4.ids), class: "community" %>
-  自らのアイデアを形にしようと、日々作品を創作している人が集まるコミュニティ</p>
+  <p><button type="button" class="btn btn-outline-danger">
+   <%= link_to "①「ダイエット」", community_posts_path(@community1.ids),class: "community" %>
+  ダイエットで、スリムな体型を目指す人が集まるコミュニティ</button></p>
+  <p><button type="button" class="btn btn-outline-success">
+  <%= link_to "②「トレーニング」",  community_posts_path(@community2.ids),class: "community" %>
+  トレーニングをして、理想の体つきを目指す人が集まるコミュニティ</button></p>
+  <p><button type="button" class="btn btn-outline-primary">
+  <%= link_to "③「資格勉強」",  community_posts_path(@community3.ids),class: "community" %>
+  合格したい資格があって、日々勉強している人が集まるコミュニティ</button></p>
+  <p><button type="button" class="btn btn-outline-warning">
+  <%= link_to "④「創作」",  community_posts_path(@community4.ids),class: "community" %>
+  自らのアイデアを形にしようと、日々作品を創作している人が集まるコミュニティ</button></p>
 </div>
 
 
