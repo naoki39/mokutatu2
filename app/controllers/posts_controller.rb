@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @community = Community.find(params[:community_id])
+    @community = Community.find(params[:community_id])#選択したcommunity_idを取得
   end
 
   def post_params
