@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     @community = Community.find(params[:community_id])#選択したcommunity_idを取得
   end
 
-  def post_params
+  def post_params#パラメーターでuser_idを取得
     params.require(:post).permit(:text).merge(user_id: current_user.id,community_id: params[:community_id])
   end
 end
