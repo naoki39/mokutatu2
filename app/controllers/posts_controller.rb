@@ -43,6 +43,6 @@ class PostsController < ApplicationController
   end
 
   def post_params#パラメーターでuser_idを取得
-    params.require(:post).permit(:text).merge(user_id: current_user.id,community_id: params[:community_id])
+    params.require(:post).permit(:text).merge(user_id: current_user.id,community_id: params[:community_id])#community_idを取得
   end
 end
