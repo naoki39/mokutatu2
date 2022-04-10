@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)#投稿に対して紐づいている全てのコメントと、コメントをしたユーザー情報が格納
   end
 
-  def destroy
+  def destroy#投稿の削除
     set_post#community_idを取得
     @post = Post.find(params[:id])#投稿を取得
     if current_user.id == @post.user.id#現在ログイン中ユーザーと投稿主が一致していた場合
