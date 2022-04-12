@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
+  def show#投稿の詳細
     @post = Post.find(params[:id])#ユーザーがどの投稿を選択しているかが格納
     @comment = Comment.new#コメントを保存するための空のインスタンスを生成
     @comments = @post.comments.includes(:user)#投稿に対して紐づいている全てのコメントと、コメントをしたユーザー情報が格納
