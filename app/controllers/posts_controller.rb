@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
+  def index#投稿一覧の表示
     set_post
     @posts = Post.where(community_id: @community.id)
    end
