@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @posts = Post.where(community_id: @community.id)
    end
 
-  def new
+  def new#新規投稿
     @post = Post.new
     set_post
   end
