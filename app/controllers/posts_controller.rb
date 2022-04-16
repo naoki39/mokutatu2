@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def create#投稿の新規作成
     set_post
     @post = Post.new(post_params)
-    if @post.save
+    if @post.save#投稿の保存
       redirect_to community_posts_path(@community.id)
     else
       render :new
