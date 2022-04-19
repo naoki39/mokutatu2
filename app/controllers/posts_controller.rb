@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     set_post
   end
 
-  def create#投稿の新規作成
+  def create
     set_post
     @post = Post.new(post_params)
     if @post.save#投稿の保存
